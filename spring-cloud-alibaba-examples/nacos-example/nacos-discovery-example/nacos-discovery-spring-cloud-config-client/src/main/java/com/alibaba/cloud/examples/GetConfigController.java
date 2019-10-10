@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 the original author or authors.
+ * Copyright 2013-2018 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,8 +17,7 @@
 package com.alibaba.cloud.examples;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -27,7 +26,7 @@ public class GetConfigController {
 	@Value("${config}")
 	private String config;
 
-	@RequestMapping(value = "/config", method = RequestMethod.GET)
+	@GetMapping("/config")
 	public String getConfig() {
 		return config;
 	}
